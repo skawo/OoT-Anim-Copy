@@ -10,7 +10,10 @@ namespace AnimCopy
         static void Main(string[] args)
         {
             if (args.Count() < 4)
+            {
                 Console.WriteLine("Usage: animcopy source_zobj zobj_to_append output_zobj [0xanimation_header_offset...]");
+                return;
+            }
 
             byte[] inf = File.ReadAllBytes(args[0]);
             byte[] outf = File.ReadAllBytes(args[1]);
